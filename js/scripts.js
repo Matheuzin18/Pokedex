@@ -83,41 +83,6 @@ shinyButton.addEventListener('dblclick', () => {
       pokemonNumber.innerHTML = '';
   }
 });
-
-//transformar em shiny mobile
-shinyButton.addEventListener('touchstart', () => {
-    if (data) {
-     pokemonImage.style.display = 'block';
-     pokemonName.innerHTML = data.name;
-     pokemonNumber.innerHTML = data.id;
-     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'];
-     input.value = '';
-     searchPokemon = data.id;
-  } 
-//não encontrado
-  else {
-      pokemonImage.style.display = 'none';
-      pokemonName.innerHTML = 'Não encontrado!';
-      pokemonNumber.innerHTML = '';
-    }
-});
-//destransformar em shiny mobile
-shinyButton.addEventListener('touchend', () => {
-    if (data) {
-        pokemonImage.style.display = 'block';
-        pokemonName.innerHTML = data.name;
-        pokemonNumber.innerHTML = data.id;
-     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-     input.value = '';
-     searchPokemon = data.id;
-    } 
-    //não encontrado
-  else {
-      pokemonImage.style.display = 'none';
-      pokemonName.innerHTML = 'Não encontrado!';
-      pokemonNumber.innerHTML = '';
-  }
-});
 };
 
 //não recarregar a página
