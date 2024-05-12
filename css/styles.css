@@ -114,3 +114,24 @@ main {
 .shiny-button:active {
     box-shadow: inset -4px 8px 0 #05a5b1;
 }
+
+.shiny-button2 {
+    width: 17%;
+    height: 12%;
+    border-radius: 50%;
+    background-color: #2ee7de;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(50%, 8%); /* Centralizar horizontalmente */
+    box-shadow: -2px 3px 0 #05a5b1, -4px 6px 0 #07aca3;
+}
+
+.shiny-button2:active {
+    box-shadow: inset -4px 8px 0 #05a5b1;
+}
+
+
+#hide {
+    display: none;
+}

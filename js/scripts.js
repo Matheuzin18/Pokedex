@@ -9,6 +9,7 @@ const input =  document.querySelector('.input_search');
 const buttonPrev =  document.querySelector('.btn-prev');
 const buttonNext =  document.querySelector('.btn-next');
 const shinyButton = document.querySelector('.shiny-button');
+const shinyButton2 = document.querySelector('.shiny-button2');
 
 //começar pelo pokemon 1
 
@@ -58,6 +59,8 @@ shinyButton.addEventListener('click', () => {
      pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'];
      input.value = '';
      searchPokemon = data.id;
+     shinyButton.setAttribute('id', 'hide');
+     shinyButton2.removeAttribute('id','hide');
   } 
 //não encontrado
   else {
@@ -66,22 +69,25 @@ shinyButton.addEventListener('click', () => {
       pokemonNumber.innerHTML = '';
     }
 });
+
 //destransformar em shiny
-shinyButton.addEventListener('dblclick', () => {
+shinyButton2.addEventListener('click', () => {
     if (data) {
-        pokemonImage.style.display = 'block';
-        pokemonName.innerHTML = data.name;
-        pokemonNumber.innerHTML = data.id;
+     pokemonImage.style.display = 'block';
+     pokemonName.innerHTML = data.name;
+     pokemonNumber.innerHTML = data.id;
      pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
      input.value = '';
      searchPokemon = data.id;
-    } 
-    //não encontrado
+     shinyButton2.setAttribute('id', 'hide');
+     shinyButton.removeAttribute('id','hide');
+  } 
+//não encontrado
   else {
       pokemonImage.style.display = 'none';
       pokemonName.innerHTML = 'Não encontrado!';
       pokemonNumber.innerHTML = '';
-  }
+    }
 });
 };
 
@@ -98,6 +104,8 @@ buttonPrev.addEventListener('click', () => {
     if (searchPokemon > 1) {
         searchPokemon -= 1;
         renderPokemon(searchPokemon);
+        shinyButton2.setAttribute('id', 'hide');
+        shinyButton.removeAttribute('id','hide');
     }
 });
 
@@ -106,6 +114,8 @@ buttonPrev.addEventListener('click', () => {
 buttonNext.addEventListener('click', () => {
     searchPokemon += 1;
     renderPokemon(searchPokemon);
+    shinyButton2.setAttribute('id', 'hide');
+    shinyButton.removeAttribute('id','hide');
    });
 
 //renderizar Pokemon
