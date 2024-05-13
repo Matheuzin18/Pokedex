@@ -48,7 +48,7 @@ const renderPokemon = async (pokemon) => {
         pokemonImage.style.display = 'none';
         pokemonName.innerHTML = 'Não encontrado!';
         pokemonNumber.innerHTML = '';
-    };
+        };
 
 //transformar em shiny
 shinyButton.addEventListener('click', () => {
@@ -118,6 +118,6 @@ buttonNext.addEventListener('click', () => {
     shinyButton.removeAttribute('id','hide');
    });
 
-//renderizar Pokemon
+//carregar Pokemon
   
 renderPokemon(searchPokemon);
